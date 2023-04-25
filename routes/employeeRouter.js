@@ -18,11 +18,11 @@ router.get('/', employeeController.getAllEmployee)
 router.get('/allLeave', leaveController.getAllLeave)
 router.post('/:id', leaveController.addLeave)
 
-// get employee leaves
+// get one employee  all leaves
 router.get('/getLeave/:id', employeeController.getEmployeeLeave)
 
-
-
+// get all employee  all leaves
+router.get("/all",employeeController.getAllEmployeeLeave)
 
 // employee router
 router.get('/:id', employeeController.getOneEmployee)

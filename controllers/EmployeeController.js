@@ -90,11 +90,21 @@ const getEmployeeLeave =  async (req, res) => {
 
 }
 
+const getAllEmployeeLeave =  async (req, res) => {
+
+    const data = await Employee.findAll({
+        include: [{
+            model: Leave,
+            as: 'leave'
+        }]
+       // where: { id: id }
+    })
+
+    res.status(200).send(data)
 
 
 
-
-
+}
 
 
 
@@ -107,6 +117,5 @@ module.exports = {
     updateEmployee,
     deleteEmployee,
     getEmployeeLeave,
-   
-    
+    getAllEmployeeLeave
 }
